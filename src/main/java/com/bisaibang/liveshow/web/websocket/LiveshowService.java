@@ -229,6 +229,7 @@ public class LiveshowService {
         }
     }
 
+    //教师为他的学生打分
     @PutMapping("/bsb-live/giveScore/{id}")
     public User giveScore(@PathVariable Long id,@RequestParam Long score){
         User user=userRepository.findOneWithAuthoritiesById(id).get();
@@ -245,6 +246,7 @@ public class LiveshowService {
         return user;
     }
 
+    //查询所有学生成绩按从大到小顺序排列
     @GetMapping("/findAllUserSortedByScore")
     public List<User> findAllUserSortedByScore(){
         List<User> players=userRepository.findAllByTutorIsFalse();
