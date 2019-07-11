@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contestent">
+            <h2><span>Contestent</span> {{contestent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{contestent.name}}</span>
+                </dd>
+                <dt><span>Avatar</span></dt>
+                <dd>
+                    <span>{{contestent.avatar}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{contestent.description}}</span>
+                </dd>
+                <dt><span>Video</span></dt>
+                <dd>
+                    <span>{{contestent.video}}</span>
+                </dd>
+                <dt><span>Abandoned</span></dt>
+                <dd>
+                    <span>{{contestent.abandoned}}</span>
+                </dd>
+                <dt><span>Tutor</span></dt>
+                <dd>
+                    {{contestent.tutor?.login}}
+                </dd>
+                <dt><span>Chosen</span></dt>
+                <dd>
+                    <span *ngFor="let chosen of contestent.chosens; let last = last">
+                        {{chosen.login}}{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contestent', contestent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

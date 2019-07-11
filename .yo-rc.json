@@ -1,0 +1,33 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.bisaibang.liveshow"
+        },
+        "jhipsterVersion": "5.7.1",
+        "applicationType": "monolith",
+        "baseName": "liveshow",
+        "packageName": "com.bisaibang.liveshow",
+        "packageFolder": "com/bisaibang/liveshow",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "hazelcast",
+        "enableHibernateCache": true,
+        "websocket": "spring-websocket",
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "MGRiOThiODFlODE0N2JlOGExYmM2ZDg1N2M0ZDcyNDM3MzA4YmEzMDBmNWYxNDMzOWRmMzhmZjA3ZjAwZDFiZDFlNDQ3YjcxZjBhYjdlZDViNDIwZDg3MjRjZjAyYzhkYjM1YzQ1MTdmYTZkZDAwMDFmZTBlZjJlZDA4N2JlZmE=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}

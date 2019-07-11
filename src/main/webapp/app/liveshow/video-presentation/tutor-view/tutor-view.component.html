@@ -1,0 +1,30 @@
+<div class="teacher-content">
+    <div class="logo-wrapper">
+        <div class="logo-battlefield1"></div>
+        <div class="logo-bisaibang"></div>
+        <div class="logo-douyu"></div>
+    </div>
+    <div class="teacher-item-wrapper">
+        <div class="teacher-item"
+             [class.active]="didTutorChoseContestant">
+            <div class="teacher-video"></div>
+            <div class="teacher-name">{{account.login}}</div>
+            <div class="count">
+                <div class="count-student"
+                     *ngFor="let _ of contestantCounts">
+                </div>
+            </div>
+            <div class="count-title">
+                募集人数:
+                {{contestantCounts.length}}人
+            </div>
+        </div>
+        <div class="teacher-select">
+            <div class="teacher-btn"
+                 (click)="choseContestant()"
+                 [class.active]="didTutorChoseContestant">
+                招募
+            </div>
+        </div>
+    </div>
+</div>

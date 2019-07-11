@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Contestent.
+    -->
+    <changeSet id="20190110115911-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tutor_id"
+                                 baseTableName="contestent"
+                                 constraintName="fk_contestent_tutor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="contestents_id"
+                                 baseTableName="contestent_chosen"
+                                 constraintName="fk_contestent_chosen_contestents_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contestent"/>
+        <addForeignKeyConstraint baseColumnNames="chosens_id"
+                                 baseTableName="contestent_chosen"
+                                 constraintName="fk_contestent_chosen_chosens_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+        
+    </changeSet>
+</databaseChangeLog>

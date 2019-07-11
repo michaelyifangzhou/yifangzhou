@@ -1,0 +1,5 @@
+id;login;password_hash;first_name;last_name;email;image_url;activated;lang_key;created_by;last_modified_by;is_tutor
+5;douyu01;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;导师;01;user1@localhost;;true;en;system;system;true
+6;douyu02;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;导师;02;user2@localhost;;true;en;system;system;true
+7;douyu03;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;导师;03;user3@localhost;;true;en;system;system;true
+8;douyu04;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;导师;04;user4@localhost;;true;en;system;system;true

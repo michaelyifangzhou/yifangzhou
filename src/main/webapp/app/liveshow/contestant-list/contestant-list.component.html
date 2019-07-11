@@ -1,0 +1,20 @@
+<div class="list-container" *ngIf="tutors">
+    <div class="list" *ngFor="let tutor of tutors">
+        <div class="tutor">{{tutor.lastName}}</div>
+        <div class="player-list">
+            <div class="player" *ngFor="let contestant of contestantsByTutor[tutor.lastName]">{{contestant?.name}}</div>
+        </div>
+    </div>
+    <div class="wait">
+        <div class="title">待选区</div>
+        <div class="wait-area">
+            <div class="wait-row" *ngIf="contestantWithoutTutor">
+                <div class="wait-item" *ngFor="let contestant of contestantWithoutTutor">{{contestant.name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo1"></div>
+        <div class="logo2"></div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="show-container">
+    <div class="content">
+        <div class="student-content">
+            <div class="student-info">
+                <div class="student-image"
+                     [style.background-image]="'url(' + contestant.avatar + ')'">
+                </div>
+                <div class="student-info-text">
+                    <div class="student-name">{{contestant.name}}</div>
+                    <div class="student-description">
+                        <p>主播介绍:</p>
+                        {{contestant.description}}
+                    </div>
+                </div>
+            </div>
+            <div class="student-video" id="player"></div>
+        </div>
+        <ng-template #defaultView>
+            <bsb-live-view></bsb-live-view>
+        </ng-template>
+        <bsb-tutor-view *ngIf="account && account.tutor; else defaultView"></bsb-tutor-view>
+    </div>
+</div>

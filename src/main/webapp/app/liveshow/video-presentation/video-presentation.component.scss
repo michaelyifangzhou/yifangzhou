@@ -1,0 +1,57 @@
+$imagePath: '../../../content/images/video-presentation/';
+.show-container {
+    padding: 30px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    .content {
+        .student-content {
+            margin: 0 auto;
+            width: 1200px;
+            height: 530px;
+            padding: 0 15px;
+            background-image: url($imagePath+'background.png');
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .student-info {
+                width: 250px;
+                height: 507px;
+                .student-image {
+                    height: 250px;
+                }
+                .student-info-text {
+                    height: 247px;
+                    background-image: url($imagePath+'description.png');
+                    margin-top: 10px;
+                    .student-name {
+                        height: 67px;
+                        text-align: center;
+                        line-height: 67px;
+                        font-size: 32px;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+                    .student-description {
+                        height: 180px;
+                        padding: 15px 20px 0;
+                        font-size: 22px;
+                        color: #c5c5c5;
+                        p {
+                            color: #fff;
+                            font-size: 24px;
+                            margin-bottom: 10px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            .student-video {
+                width: 901px;
+                height: 507px;
+                overflow: hidden;
+            }
+        }
+    }
+}

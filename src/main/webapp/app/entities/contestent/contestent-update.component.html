@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-contestent-heading">Create or edit a Contestent</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!contestent.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="contestent.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="contestent.name" required/>
+                    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.name?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_avatar">Avatar</label>
+                    <input type="text" class="form-control" name="avatar" id="field_avatar"
+                        [(ngModel)]="contestent.avatar" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="contestent.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_video">Video</label>
+                    <input type="text" class="form-control" name="video" id="field_video"
+                        [(ngModel)]="contestent.video" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_abandoned">Abandoned</label>
+                    <input type="checkbox" class="form-control" name="abandoned" id="field_abandoned"
+                        [(ngModel)]="contestent.abandoned" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tutor">Tutor</label>
+                    <select class="form-control" id="field_tutor" name="tutor" [(ngModel)]="contestent.tutor" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === contestent.tutor?.id ? contestent.tutor : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_chosen">Chosen</label>
+                    <select class="form-control" id="field_chosen" multiple name="chosen" [(ngModel)]="contestent.chosens">
+                        <option [ngValue]="getSelected(contestent.chosens, userOption)" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

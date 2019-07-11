@@ -1,0 +1,25 @@
+<div class="teacher-content">
+    <div class="logo-wrapper">
+        <div class="logo-battlefield1"></div>
+        <div class="logo-bisaibang"></div>
+        <div class="logo-douyu"></div>
+    </div>
+    <div class="teacher-item-wrapper">
+        <div class="teacher-item"
+             [ngClass]="didTutorChoseContestant[tutor.id] && !showingVideo[i] && 'active'"
+             *ngFor="let tutor of tutors">
+            <div class="teacher-video"></div>
+            <div class="teacher-name">{{tutor.lastName}}</div>
+            <div class="count">
+                <div class="count-student"
+                     [ngClass]="isAddContestant && 'active'"
+                     *ngFor="let _ of contestantCountsOfEachTutor[tutor.id]">
+                </div>
+            </div>
+            <div class="count-title">
+                募集人数:
+                {{contestantCountsOfEachTutor[tutor.id] && contestantCountsOfEachTutor[tutor.id].length}}人
+            </div>
+        </div>
+    </div>
+</div>

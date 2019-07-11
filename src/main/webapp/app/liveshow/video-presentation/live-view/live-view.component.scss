@@ -1,0 +1,88 @@
+$imagePath: '../../../../content/images/video-presentation/';
+@keyframes selecting {
+    0% {
+        box-shadow: 0 0 32px 10px rgba(255, 170, 37, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 16px 6px rgba(255, 170, 37, 0.4);
+    }
+}
+@keyframes selected {
+    0% {
+        transform: scale(4, 4);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale(4, 4);
+        opacity: 1;
+    }
+}
+.teacher-content {
+    width: 1400px;
+    .logo-wrapper {
+        height: 92px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logo-battlefield1 {
+            width: 260px;
+            height: 59px;
+            background-image: url($imagePath+'battlefield1-logo.png');
+        }
+        .logo-bisaibang {
+            width: 170px;
+            height: 50px;
+            background-image: url($imagePath+'bisaibang-logo.png');
+            margin-left: 85px;
+            margin-right: 105px;
+        }
+        .logo-douyu {
+            width: 110px;
+            height: 44px;
+            background-image: url($imagePath+'douyu-logo.png');
+        }
+    }
+    .teacher-item-wrapper {
+        display: flex;
+        justify-content: space-between;
+        .teacher-item {
+            width: 320px;
+            height: 340px;
+            background-image: url($imagePath+'tutor-bg.png');
+            .teacher-video {
+                height: 185px;
+            }
+            .teacher-name {
+                height: 50px;
+                font-size: 24px;
+                font-weight: 700;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: url($imagePath+'tutor-name.png');
+            }
+            .count {
+                padding: 15px 0 10px 55px;
+                display: flex;
+                height: 55px;
+                .count-student {
+                    width: 30px;
+                    height: 30px;
+                    background-image: url($imagePath+'bullet.png');
+                }
+                .active {
+                    animation: selected 0.5s linear;
+                }
+            }
+            .count-title {
+                text-align: center;
+                font-size: 18px;
+                color: #fff;
+            }
+        }
+        .active {
+            animation: selecting 2s infinite alternate;
+        }
+    }
+}

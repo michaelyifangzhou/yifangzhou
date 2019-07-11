@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="button-container" *ngIf="!isAuthenticated()">
+        <button class="btn btn-primary jh-create-entity create-contestent button" (click)="login()">登录</button>
+    </div>
+
+    <div class="button-container" *ngIf="isAuthenticated() ">
+        <button class="btn btn-primary jh-create-entity create-contestent button" *ngIf="account.login !== 'admin'" routerLink="video" (click)="fullScreen()">进入直播间</button>
+        <button class="btn btn-primary jh-create-entity create-contestent button" *ngIf="account.login === 'admin'" routerLink="control">进入中控台</button>
+    </div>
+
+    <div class="button-container" *ngIf="isAuthenticated()">
+        <button class="btn btn-primary jh-create-entity create-contestent button" (click)="logout()">退出登录</button>
+    </div>
+</div>

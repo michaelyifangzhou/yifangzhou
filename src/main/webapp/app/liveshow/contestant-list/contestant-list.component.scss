@@ -1,0 +1,81 @@
+.list-container {
+    background-color: transparent;
+    width: 1220px;
+    margin: 0 auto;
+    padding: 33px 90px 36px;
+    .list {
+        padding-bottom: 48px;
+        .tutor {
+            font-size: 39px;
+            color: #fff;
+            width: 189px;
+            height: 101px;
+            border-bottom: 5px solid #fff;
+            background-color: rgba(0, 0, 0, 0.46);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .player-list {
+            display: flex;
+            margin-top: 24px;
+            justify-content: space-between;
+            .player {
+                width: 134px;
+                height: 55px;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 23px;
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.46);
+                padding-left: 10px;
+            }
+        }
+    }
+    .wait {
+        margin-top: 68px;
+        .title {
+            font-size: 47px;
+            color: #fff;
+            text-align: center;
+        }
+        .wait-area {
+            width: 100%;
+            padding: 10px 92px 48px;
+            background-color: rgba(0, 0, 0, 0.46);
+            border-radius: 8px;
+            .wait-row {
+                display: flex;
+                align-items: flex-end;
+                border-bottom: 4px solid #afadb1;
+                height: 85px;
+                .wait-item {
+                    width: 122px;
+                    font-size: 24px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .logo {
+        margin-top: 86px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logo1 {
+            width: 142px;
+            height: 58px;
+            background-image: url('../../../content/images/contestant-list/logo1.png');
+            background-repeat: no-repeat;
+        }
+        .logo2 {
+            width: 150px;
+            height: 34px;
+            background-image: url('../../../content/images/contestant-list/logo2.png');
+            background-repeat: no-repeat;
+            margin-left: 89px;
+        }
+    }
+}

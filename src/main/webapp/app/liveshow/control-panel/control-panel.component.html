@@ -1,0 +1,85 @@
+<div>
+    <button class="btn btn-primary jh-create-entity create-contestent" (click)="backwardForward(-5)">
+        <fa-icon icon="backward"></fa-icon>
+        <span>快退5秒</span>
+    </button>
+    <button class="btn btn-primary jh-create-entity create-contestent" (click)="startPauseVideo()">
+        <fa-icon icon="pause"></fa-icon>
+        <span>播放\暂停</span>
+    </button>
+    <button class="btn btn-primary jh-create-entity create-contestent" (click)="backwardForward(5)">
+        <fa-icon icon="forward"></fa-icon>
+        <span>快进5秒</span>
+    </button>
+    <button class="btn btn-primary float-right jh-create-entity create-contestent" [routerLink]="['/contestent/new']">
+        <fa-icon icon="plus"></fa-icon>
+        <span>创建新选手</span>
+    </button>
+    <p>切换到</p><input type="number" [(ngModel)]="nextId" placeholder="选手id">
+    <button (click)="changeCurrentContestant()">切换</button>
+</div>
+<jhi-alert></jhi-alert>
+<div class="table-responsive" *ngIf="contestents">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th><span>ID</span></th>
+            <th><span>Name</span></th>
+            <th><span>Avatar</span></th>
+            <th><span>Description</span></th>
+            <th><span>Video</span></th>
+            <th><span>Abandoned</span></th>
+            <th><span>Tutor</span></th>
+            <th><span>Chosen</span></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let contestent of contestents">
+            <td><a [routerLink]="['/contestent', contestent.id, 'view' ]">{{contestent.id}}</a></td>
+            <td>{{contestent.name}}</td>
+            <td>{{contestent.avatar}}</td>
+            <td>{{contestent.description}}</td>
+            <td>{{contestent.video}}</td>
+            <td>{{contestent.abandoned}}</td>
+            <td>
+                <select #tutorSelect *ngIf="tutors" [ngModel]="contestent.tutor?.login" (change)="selectTutors(contestent, tutorSelect)">
+                    <option [value]="null">无导师</option>
+                    <option *ngFor="let t of tutors" [value]="t.login">
+                        {{ t.lastName }}
+                    </option>
+                </select>
+            </td>
+            <td>
+                    <span *ngFor="let chosen of contestent.chosens; let last = last">
+                            {{chosen.lastName}}{{last ? '' : ', '}}
+                        </span>
+            </td>
+            <td class="text-right">
+                <div class="btn-group flex-btn-group-container">
+                    <button type="submit"
+                            [routerLink]="['/contestent', contestent.id, 'view' ]"
+                            class="btn btn-info btn-sm">
+                        <fa-icon [icon]="'eye'"></fa-icon>
+                        <span class="d-none d-md-inline">View</span>
+                    </button>
+                    <button type="submit"
+                            [routerLink]="['/contestent', contestent.id, 'edit']"
+                            class="btn btn-primary btn-sm">
+                        <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                        <span class="d-none d-md-inline">Edit</span>
+                    </button>
+                    <button type="submit"
+                            [routerLink]="['/', { outlets: { popup: 'contestent/'+ contestent.id + '/delete'} }]"
+                            replaceUrl="true"
+                            queryParamsHandling="merge"
+                            class="btn btn-danger btn-sm">
+                        <fa-icon [icon]="'times'"></fa-icon>
+                        <span class="d-none d-md-inline">Delete</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
